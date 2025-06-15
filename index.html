@@ -243,9 +243,174 @@
         margin-right: 10px;
       }
     }
+    #bonus-popups {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.bonus-popup {
+  background: #fff;
+  border-left: 6px solid #25d366;
+  padding: 14px 16px;
+  margin-top: 14px;
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  max-width: 300px;
+  position: relative;
+}
+
+.bonus-popup .tag {
+  background-color: #25d366;
+  color: white;
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.bonus-popup strong {
+  display: block;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.bonus-popup small {
+  color: #444;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.bonus-popup .close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    #sales-popup {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: #ffffff;
+  color: #111;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  display: none;
+  z-index: 9999;
+  font-size: 15px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    .slots-banner {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff0040;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: fadeInOut 15s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+    .headline-banner {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+#movable-countdown {
+  position: fixed;
+  bottom: 80px; /* Sits nicely above the Buy Now button */
+  right: 20px;
+  background: #111; /* Dark background for contrast */
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  cursor: move;
+  user-select: none;
+  max-width: 260px;
+  text-align: center;
+}
   </style>
+    <!-- Your existing styles and metadata -->
+  ...
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1736209940334494');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1736209940334494&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+
 </head>
 <body>
+  <div class="headline-banner">
+  🔥 From ₦0 to ₦1M — Real Nigerians Are Doing It. You Can Too.
+  </div>
   <header>
     <h1>
       Online Income Explosion: Learn Affiliate Marketing, Dropshipping & Trading — Get From ₦0 to ₦1 Million FAST!
@@ -266,7 +431,7 @@
       <br><b>Take your time to explore the page — it contains all the important info you’ll need to understand the guide fully</b>
     </p>
     <div>
-      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small">Start Now — ₦25k</a>
+      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small" onclick="fbq('track', 'Purchase');">Start Now — ₦25k</a>
     </div>
   </div>
 
@@ -283,7 +448,7 @@
   <img class="book-cover" src="https://i.ibb.co/20sR48Gz/IMG-20250609-WA0030.jpg" alt="Book Cover" border="0">
 </a>
     <div>
-      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small">Buy Now — ₦25,000</a>
+      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small" onclick="fbq('track', 'Purchase');">Buy Now — ₦25,000</a>
     </div>
   </div>
 
@@ -299,7 +464,7 @@
       <li>Anyone ready to finally change their life with digital skills</li>
     </ul>
     <div>
-      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small">Let’s Get Started</a>
+      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small" onclick="fbq('track', 'Purchase');">Let’s Get Started</a>
     </div>
   </div>
 
@@ -308,7 +473,7 @@
     <p><strong>Old Price: ₦300,000 — New Price: ₦25,000 Only</strong></p>
     <p>100% Refund Guarantee — If It Doesn’t Work for You, Get Your Money Back!</p>
     <div>
-      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy">Get It Now — Only ₦25k</a>
+      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy" onclick="fbq('track', 'Purchase');">Get It Now — Only ₦25k</a>
     </div>
   </div>
 
@@ -323,7 +488,7 @@
       These bonuses disappear after the countdown ends!
     </p>
     <div style="text-align: center;">
-      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small">Claim It Now — ₦25k</a>
+      <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small" onclick="fbq('track', 'Purchase');">Claim It Now — ₦25k</a>
     </div>
   </div>
 
@@ -340,7 +505,7 @@
     allowfullscreen style="margin-top: 15px; border-radius: 12px;"></iframe>
 
   <div style="text-align:center; margin-top:20px;">
-    <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small">Buy Now After Watching</a>
+    <a href="https://selar.com/p/661646?affiliate=jtb5" class="btn-buy small" onclick="fbq('track', 'Purchase');">Buy Now After Watching</a>
   </div>
 </div>
   <div class="testimonials">
@@ -395,6 +560,13 @@
 
     <h3>8. How do I contact you for questions?</h3>
     <p>You can reach me directly via WhatsApp below.</p>
+    <h3>9. Why is it ₦25,000 now instead of ₦300,000?</h3>
+<p>
+  We dropped the price so that even people with little or no capital can start. No more excuses — this is your chance to enter the online money game without breaking the bank.
+</p>
+<p style="font-weight: bold; color: #d60000;">
+  Rush it now — this price won't last long.
+</p>
   </div>
 
   <!-- WhatsApp Contact -->
@@ -463,5 +635,143 @@ updateTimer();
     background: #00ccaa;
   }
 </style>
+  <!-- Floating Bonus Popups -->
+<div id="bonus-popups">
+  <div class="bonus-popup" style="animation-delay: 0s;">
+    <div class="tag">🎯 BONUS</div>
+    <strong>Win a Funded Trading Account</strong>
+    <small>We’ll give you the capital. You keep the profits. Zero risk, all reward!</small>
+    <span class="close" onclick="this.parentElement.style.display='none'">×</span>
+  </div>
+
+  <div class="bonus-popup" style="animation-delay: 2s;">
+    <div class="tag">💬 BONUS</div>
+    <strong>Join Our Private Telegram Group</strong>
+    <small>Daily gems, live Q&As, income secrets. Build your first ₦1M with real support.</small>
+    <span class="close" onclick="this.parentElement.style.display='none'">×</span>
+  </div>
+
+  <div class="bonus-popup" style="animation-delay: 4s;">
+    <div class="tag">🎁 BONUS</div>
+    <strong>Weekly Giveaways & Challenges</strong>
+    <small>Cash prizes, product drops, airtime — stay active, win big, grow fast.</small>
+    <span class="close" onclick="this.parentElement.style.display='none'">×</span>
+  </div>
+</div>
+  <!-- Sales Notification Popup -->
+<div id="sales-popup">
+  <span id="popup-name">Someone</span> just bought the guide! 🚀
+</div>
+
+<script>
+  const names = [
+    "Oladapo Semilore", "Mary Chukwuma", "Kelvin Johnson", "Blessing Adeola", "Samuel Okafor",
+    "Tina Ayoola", "Emeka Obi", "Grace Onuoha", "David Benson", "Peace Alabi",
+    "Joshua Eze", "Esther Ojo", "Daniel Ogun", "Chiamaka Nwosu", "Philip James",
+    "Ruth Ikenna", "Favour Bello", "Hassan Sule", "Temitope Owolabi", "Ifeanyi Umeh",
+    "Janet Olamide", "Aisha Abdullahi", "Micheal Okonkwo", "Chidera Nwachukwu", "Tobi Bakare",
+    "Mariam Ogunlana", "Segun Adeyemi", "Fatima Yusuf", "Tony Nnamdi", "Precious Ibukun",
+    "Henry Adeboye", "Vivian Eneh", "Collins Agbaje", "Nkechi Madu", "Zainab Salisu",
+    "Raphael Agwu", "Ngozi Ekene", "Idris Ganiyu", "Glory Eze", "Hope Bassey",
+    "Elijah Chukwudi", "Dolapo Ariyo", "Kingsley Osagie", "Rosemary Iro", "Timothy Ayeni",
+    "Deborah Ezeani", "Sylvia Ndukwe", "Usman Bello", "Beatrice Chima", "Franklin Nosa"
+  ];
+
+  const popup = document.getElementById('sales-popup');
+  const popupName = document.getElementById('popup-name');
+
+  function showPopup() {
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    popupName.textContent = randomName;
+    popup.style.display = 'block';
+
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 6000); // Hide after 6 seconds
+  }
+
+  // First show after 5 seconds, then every 1 minute
+  setTimeout(showPopup, 5000);
+  setInterval(showPopup, 60000);
+</script>
+  <div id="slots-banner" class="slots-banner" style="display: none;">
+  🚨 Only <strong>18 slots</strong> left! Secure yours now before it’s gone!
+  </div>
+  <script>
+  function showSlotsBanner() {
+    const banner = document.getElementById('slots-banner');
+    banner.style.display = 'block';
+
+    // Hide after 15 seconds
+    setTimeout(() => {
+      banner.style.display = 'none';
+    }, 15000);
+  }
+
+  // Show immediately on load
+  showSlotsBanner();
+
+  // Repeat every 20 minutes
+  setInterval(showSlotsBanner, 20 * 60 * 1000);
+  </script>
+  <div id="movable-countdown">
+  ⏳ Offer Ends In: <span id="countdown-timer">Loading...</span>
+  <span id="close-countdown">×</span>
+</div>
+<script>
+  // Countdown logic
+  function updateCountdownTimer() {
+    const start = localStorage.getItem('countdownStartTime') || Date.now();
+    localStorage.setItem('countdownStartTime', start);
+    const now = Date.now();
+    const remaining = 24 * 60 * 60 * 1000 - (now - start);
+
+    if (remaining <= 0) {
+      document.getElementById('countdown-timer').innerText = 'EXPIRED';
+      return;
+    }
+
+    const h = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((remaining / (1000 * 60)) % 60);
+    const s = Math.floor((remaining / 1000) % 60);
+    document.getElementById('countdown-timer').innerText = `${h}h ${m}m ${s}s`;
+  }
+
+  setInterval(updateCountdownTimer, 1000);
+  updateCountdownTimer();
+
+  // Close button
+  document.getElementById('close-countdown').onclick = () => {
+    document.getElementById('movable-countdown').style.display = 'none';
+  };
+
+  // Drag functionality
+  const dragItem = document.getElementById("movable-countdown");
+  let active = false, currentX, currentY, initialX, initialY, xOffset = 0, yOffset = 0;
+
+  dragItem.addEventListener("mousedown", dragStart);
+  document.addEventListener("mouseup", dragEnd);
+  document.addEventListener("mousemove", drag);
+
+  function dragStart(e) {
+    active = true;
+    initialX = e.clientX - xOffset;
+    initialY = e.clientY - yOffset;
+  }
+
+  function drag(e) {
+    if (!active) return;
+    e.preventDefault();
+    currentX = e.clientX - initialX;
+    currentY = e.clientY - initialY;
+    xOffset = currentX;
+    yOffset = currentY;
+    dragItem.style.transform = `translate(${currentX}px, ${currentY}px)`;
+  }
+
+  function dragEnd() {
+    active = false;
+  }
+</script>
 </body>
 </html>
